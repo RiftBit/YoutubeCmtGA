@@ -1,4 +1,4 @@
-# Youtube Comment GiveAway
+# Youtube Comment GiveAway [QT version]
 Application to make a Giveaway by comments under Youtube video
 
 Приложение для проведения розыгрышей/раздач на основании комментариев под видео на Youtube с возможностью использования фильтров.
@@ -36,4 +36,3 @@ You should use `run.bat` to start this application.
 - [x] Getting youtube video comments
 - [x] Getting random comment
 - [x] Create GUI
-- [ ] Improve GUI
