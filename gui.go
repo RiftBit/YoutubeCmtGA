@@ -1,3 +1,5 @@
+//go:generate genqrc assets
+
 package main
 
 import (
