@@ -1,5 +1,6 @@
 # Youtube Comment GiveAway
 Application to make a Giveaway by comments under Youtube video
+
 Приложение для проведения розыгрышей/раздач на основании комментариев под видео на Youtube с возможностью использования фильтров.
 
 # Dependecies / Зависимости
