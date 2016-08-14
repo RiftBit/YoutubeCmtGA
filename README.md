@@ -18,6 +18,9 @@ System requirements:
 
  - Ant
  - QT 5.4.1
+ - MinGW x64
+   - libstdc++-6
+   - libgcc_s_seh-1
  
 # How to build / Как собрать
 
