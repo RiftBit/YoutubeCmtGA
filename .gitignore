@@ -3,3 +3,4 @@ qrc.go
 *.iml
 out
 config.yml
+*.tar.gz
