@@ -1,0 +1,5 @@
+qrc.go
+.idea
+*.iml
+out
+config.yml

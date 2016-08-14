@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="ALS-Go" default="build_windows_x64">
+
+    <property environment="env"/>
+
+    <target name="prepare" depends="clean, go-get, go-genqrc"/>
+    <target name="fast_build_and_run" depends="clean, go-genqrc, go_build_windows_x64, copy_config, run_app"/>
+    <target name="build_all" depends="prepare, go_build_windows_x64, go_build_linux_x64, copy_config, go-zip"/>
+    <target name="build_windows_x64" depends="prepare, go_build_windows_x64, copy_config, go-zip"/>
+    <target name="build_linux_x64" depends="prepare, go_build_linux_x64, copy_config, go-zip"/>
+
+
+    <target name="clean" description="Cleanup build artifacts">
+        <delete>
+            <fileset dir="${basedir}" includes="**/release-*.*"/>
+        </delete>
+
+        <delete failonerror="false" includeEmptyDirs="true">
+            <fileset dir="${basedir}/out" />
+        </delete>
+    </target>
+
+
+    <target name="go-get">
+        <exec executable="go" failonerror="true" ><arg value="get"/> <arg value="-u"/> <arg value="gopkg.in/qml.v1"/>
+            <!--<env key="GOPATH" path="${basedir}"/>-->
+        </exec>
+        <exec executable="go" failonerror="true" ><arg value="get"/> <arg value="-u"/> <arg value="gopkg.in/qml.v1/cmd/genqrc"/>
+            <!--<env key="GOPATH" path="${basedir}"/>-->
+        </exec>
+        <exec executable="go" failonerror="true" ><arg value="get"/> <arg value="-u"/> <arg value="github.com/parnurzeal/gorequest"/>
+            <!--<env key="GOPATH" path="${basedir}"/>-->
+        </exec>
+        <exec executable="go" failonerror="true" ><arg value="get"/> <arg value="-u"/> <arg value="gopkg.in/yaml.v2"/>
+            <!--<env key="GOPATH" path="${basedir}"/>-->
+        </exec>
+    </target>
+	
+	<target name="go-genqrc">
+        <exec executable="go" failonerror="true" taskname="Generate qrc.go">
+            <arg value="generate"/>
+        </exec>
+    </target>
+
+    <target name="go_build_windows_x64">
+        <exec executable="go" failonerror="true" taskname="building go for win64">
+            <env key="GODEBUG" value="cgocheck=0"/>
+            <env key="GOOS" value="windows"/>
+            <env key="GOARCH" value="amd64"/>
+            <arg value="build"/>
+            <!--<arg value="-v"/>-->
+            <arg value="-o"/>
+            <arg path="${basedir}/out/YTCommentGiveAway_windows_x64.exe"/>
+        </exec>
+    </target>
+
+
+    <target name="go_build_linux_x64">
+        <exec executable="go" failonerror="true" taskname="building go for linux64">
+            <env key="GODEBUG" value="cgocheck=0"/>
+            <env key="GOOS" value="linux"/>
+            <env key="GOARCH" value="amd64"/>
+            <arg value="build"/>
+            <!--<arg value="-v"/>-->
+            <arg value="-o"/>
+            <arg path="${basedir}/out/YTCommentGiveAway_linux_x64"/>
+        </exec>
+    </target>
+
+    <target name="copy_config">
+        <copy file="${basedir}/config.yml.smpl" tofile="${basedir}/out/config.yml"/>
+        <copy file="${basedir}/run.bat" tofile="${basedir}/out/run.bat"/>
+    </target>
+
+    <target name="go-zip">
+        <tar destfile="${basedir}/release.tar.gz" compression="gzip">
+            <tarfileset dir="${basedir}/out" filemode="777">
+                <include name="*"/>
+            </tarfileset>
+        </tar>
+    </target>
+
+    <target name="run_app">
+        <exec dir="${basedir}/out" executable="cmd">
+            <env key="GODEBUG" value="cgocheck=0"/>
+            <arg value="/c"/>
+            <arg value="run.bat"/>
+            <arg value="-p"/>
+        </exec>
+    </target>
+
+</project>
