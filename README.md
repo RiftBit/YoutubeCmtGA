@@ -1,7 +1,7 @@
 # Youtube Comment GiveAway [QT version]
-Application to make a Giveaway by comments under Youtube video
+Application to make a Giveaway by comments under Youtube video with filter/hashtag/regexp ability.
 
-Приложение для проведения розыгрышей/раздач на основании комментариев под видео на Youtube с возможностью использования фильтров.
+Приложение для проведения розыгрышей/раздач на основании комментариев под видео на Youtube с возможностью использований фильтров/хэштегов/регулярных выражений.
 
 ![Image of Application](Screenshot.png)
 
