@@ -71,6 +71,10 @@
         <copy file="${basedir}/config.yml.smpl" tofile="${basedir}/out/config.yml"/>
         <copy file="${basedir}/libstdc++-6.dll" tofile="${basedir}/out/libstdc++-6.dll"/>
         <copy file="${basedir}/libgcc_s_seh-1.dll" tofile="${basedir}/out/libgcc_s_seh-1.dll"/>
+        <copy file="${basedir}/Qt5Gui.dll" tofile="${basedir}/out/Qt5Gui.dll"/>
+        <copy file="${basedir}/Qt5Core.dll" tofile="${basedir}/out/Qt5Core.dll"/>
+        <copy file="${basedir}/Qt5Qml.dll" tofile="${basedir}/out/Qt5Qml.dll"/>
+        <copy file="${basedir}/Qt5Quick.dll" tofile="${basedir}/out/Qt5Quick.dll"/>
         <copy file="${basedir}/run.bat" tofile="${basedir}/out/run.bat"/>
     </target>
 
