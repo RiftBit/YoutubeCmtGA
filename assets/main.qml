@@ -29,7 +29,7 @@ ApplicationWindow {
             flat: false
             Layout.fillHeight: false
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            title: "Youtube video link"
+            title: "Youtube Video ID"
             Layout.fillWidth: true
 
             RowLayout {
@@ -47,14 +47,13 @@ ApplicationWindow {
                     id: youtubeUrlID
                     text: "7zv4ndak8Mo"
                     inputMask: ""
-                    placeholderText: "https://www.youtube.com/watch?v=7zv4ndak8Mo"
+                    placeholderText: "7zv4ndak8Mo"
                     Layout.fillWidth: true
                 }
                 Button {
                     id: startButton
                     text: "Start"
                     onClicked: {
-                        //console.log("Start clicked!")
                         youtuberUI.start(youtubeUrlID.text, regExpPatternID.text)
                         labelAuthor.text = youtuberUI.textAuthor
                         labelComment.text = youtuberUI.textComment
@@ -90,7 +89,7 @@ ApplicationWindow {
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
             visible: true
             Layout.fillHeight: false
-            title: "Youtube Comment Regular Expression"
+            title: "Youtube Comment RegExp"
             flat: false
         }
 
@@ -189,7 +188,6 @@ ApplicationWindow {
             anchors.fill: parent
             cursorShape: Qt.PointingHandCursor
             onClicked: {
-                console.log("asd clicked!")
                 Qt.openUrlExternally("http://ergoz.ru")
             }
         }

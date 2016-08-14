@@ -3,6 +3,8 @@ Application to make a Giveaway by comments under Youtube video
 
 Приложение для проведения розыгрышей/раздач на основании комментариев под видео на Youtube с возможностью использования фильтров.
 
+![Image of Application](Screenshot.png)
+
 # Dependecies / Зависимости
 
 Go packages:
@@ -25,3 +27,10 @@ System requirements:
 
 #How to run / Как запускать
 You should use `run.bat` to start this application.
+
+#ToDo
+
+- [x] Getting youtube video comments
+- [x] Getting random comment
+- [x] Create GUI
+- [ ] Improve GUI

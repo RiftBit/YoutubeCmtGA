@@ -3,3 +3,4 @@
 @set GODEBUG=cgocheck=0
 call .\YTCommentGiveAway_windows_x64.exe
 @echo Finished
+pause
