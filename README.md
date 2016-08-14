@@ -17,10 +17,10 @@ System requirements:
  - QT 5.4.1
  
 # How to build / Как собрать
-Edit your system environment config:
- - Add `GODEBUG` param with `cgocheck=0` value
-Run `ant` in project root directory
-After compile edit your youtube api key in `config.yml` file
+
+ - Add `GODEBUG` param with `cgocheck=0` value to system environment
+ - Run `ant` in project root directory
+ - After compile edit your youtube api key in `config.yml` file
 
 #How to run / Как запускать
 You should use `run.bat` to start this application.
